@@ -99,10 +99,10 @@ if __name__ == "__main__":
         sys.exit(1)
     
     output_filename = sys.argv[1]
-    output_directory = 'notebooks'  # Diretório padrão para o notebook de saída
+    output_directory = '.'  # Diretório raiz para o notebook de saída
     
     # Verificar se existe um notebook com o mesmo nome no diretório raiz e removê-lo
-    if os.path.exists(output_filename):
+    if os.path.exists(os.path.join(output_directory, output_filename)):
         try:
             os.remove(output_filename)
             print(f"Arquivo existente removido: {output_filename}")
